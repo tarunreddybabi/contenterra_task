@@ -11,15 +11,23 @@ export default function Card({ title, post, url, score }) {
         border: "1px solid #ddd",
         borderRadius: "8px",
         padding: "16px",
-        marginTop: "10px",
+        margin: "10px auto", // Center the card and add margin
         backgroundColor: "#f9f9f9",
         boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-        width: "100%",
+        width: "90%", // Use a percentage width for responsiveness
+        maxWidth: "600px", // Set a maximum width
         display: "flex",
         flexDirection: "column",
+        transition: "transform 0.2s", // Smooth hover effect
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.transform = "scale(1.02)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.transform = "scale(1)";
       }}
     >
-      <h2 style={{ fontSize: "18px", marginBottom: "8px", color: "#333" }}>
+      <h2 style={{ fontSize: "1.5em", marginBottom: "8px", color: "#333" }}>
         {title}
       </h2>
 
@@ -30,10 +38,10 @@ export default function Card({ title, post, url, score }) {
           marginBottom: "12px",
           maxHeight: "150px",
           overflow: "hidden",
+          overflowY: "auto", // Enable vertical scrolling if necessary
         }}
-        // dangerouslySetInnerHTML={{ __html: post }}
       >
-        {parse(htmlContent)}{" "}
+        {parse(htmlContent)}
       </div>
 
       <div

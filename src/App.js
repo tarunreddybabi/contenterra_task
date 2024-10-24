@@ -16,7 +16,7 @@ const App = () => {
 
   return (
     <div className="app">
-      <h1>Reddit ReactJS Posts</h1>
+      <h1 style={{textAlign:"center"}}>Reddit ReactJS Posts</h1>
       <div>
         {posts.map((post, index) => (
           <div key={index}>
